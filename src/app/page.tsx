@@ -49,7 +49,7 @@ export default function Home() {
   };
 
   return (
-    <div className="w-full h-[calc(100vh-64px)] overflow-y-auto scroll-smooth md:snap-y md:snap-mandatory scroll-pt-16 pb-24 md:pb-8">
+    <div className="w-full h-[calc(100vh-64px)] overflow-y-auto scroll-smooth pb-24 md:pb-8">
       <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col">
         
         {/* Main Layout Wrapper */}
@@ -125,7 +125,7 @@ export default function Home() {
         </div>
 
         {/* Shop by Quantity (Bento Grid) */}
-        <section className="md:snap-start shrink-0 min-h-fit pb-12 flex flex-col justify-center">
+        <section className="shrink-0 min-h-fit pb-12 flex flex-col justify-center">
           <div className="w-full">
             <h3 className="font-title-md text-title-md text-on-surface mb-stack-md text-center md:text-left">Shop by Quantity</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-base md:gap-gutter">
@@ -151,7 +151,7 @@ export default function Home() {
         </section>
 
         {/* Why Dhenuh? */}
-        <section className="md:snap-start shrink-0 min-h-fit py-12 flex flex-col justify-center">
+        <section className="shrink-0 min-h-fit py-12 flex flex-col justify-center">
           <div className="w-full bg-surface-container-low rounded-xl p-margin-mobile md:p-margin-desktop border border-surface-variant shadow-sm">
             <h3 className="font-title-md text-title-md text-on-surface mb-stack-md text-center">Why Choose Dhenuh?</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter text-center">
