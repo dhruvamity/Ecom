@@ -52,17 +52,17 @@ export default function Home() {
     <div className="w-full h-[calc(100vh-64px)] overflow-y-auto scroll-smooth md:snap-y md:snap-mandatory scroll-pt-16 pb-24 md:pb-8">
       <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col">
         
-        {/* Dashboard Wrapper (Hero + Products + Search) */}
-        <section className="md:snap-start shrink-0 flex flex-col gap-6 md:gap-4 md:h-[calc(100vh-80px)] md:justify-between pt-6 md:pt-4">
+        {/* Main Layout Wrapper */}
+        <div className="flex flex-col gap-12 pt-6 md:pt-12">
           
           {/* Hero Section (Carousel Banner) */}
-          <div className="relative w-full h-[30vh] md:h-[40vh] min-h-[250px] rounded-2xl overflow-hidden shadow-xl shrink-0">
+          <section className="relative w-full overflow-hidden rounded-2xl min-h-[300px] md:min-h-[400px] flex flex-col justify-end">
             <img
               alt="Sacred Nourishment from Local Heritage"
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover -z-10"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfBBoa37PfaOaz54pltag1tb2_-zfSC3jC51d8LuNYfWam33Tx29zf4lnym-UIBOTRb0uZ69l_0GWS8aD0vN8vjgNhh5phXaqPLxz2uJGPnqal456sQTTq6NtZJOpMreFOKUtsGK0JzkG_HbMNRTrm_M4hkqcR4FSmghlDu0tVyhU3TB8zm1u3z4sbxdQ5tXrB_ZCK_ko7P1zcAgmizqaxvwaktxjAf9f5_YdmcMSW6JLaFAuYbHE2x8EGR2i5csrMbZM"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-surface-tint/90 via-surface-tint/40 to-transparent flex flex-col justify-end p-margin-mobile md:p-margin-desktop">
+            <div className="relative z-10 w-full bg-gradient-to-t from-black/80 to-transparent p-6 md:p-12">
               <div className="max-w-xl text-on-primary">
                 <h2 className="font-display-lg text-display-lg mb-stack-sm text-surface-bright drop-shadow-md">
                   Sacred Nourishment<br />from Local Heritage
@@ -75,12 +75,12 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-          </div>
+          </section>
 
           {/* Product Listings (Best Sellers) */}
-          <div className="flex flex-col justify-center">
+          <section className="flex flex-col justify-center">
             <h3 className="font-title-md text-title-md text-on-surface mb-stack-sm text-center md:text-left">Our Best Sellers</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {bestSellers.map((product) => (
                 <div key={product.id} className="flex flex-col bg-surface-container-lowest rounded-xl shadow-[0_4px_24px_rgba(119,87,77,0.15)] overflow-hidden hover:shadow-lg transition-shadow">
                   <Link href="/product" className="relative aspect-[4/3] bg-surface-variant overflow-hidden group block cursor-pointer">
@@ -109,10 +109,10 @@ export default function Home() {
                 </div>
               ))}
             </div>
-          </div>
+          </section>
 
           {/* Search Bar */}
-          <div className="w-full max-w-2xl mx-auto mt-auto pb-4">
+          <section className="w-full max-w-2xl mx-auto pb-4">
             <div className="relative flex items-center bg-surface-container-lowest rounded-full shadow-md overflow-hidden border border-outline-variant focus-within:border-primary transition-colors">
               <Search className="text-on-surface-variant absolute left-6" size={24} />
               <input
@@ -121,8 +121,8 @@ export default function Home() {
                 type="text"
               />
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
 
         {/* Shop by Quantity (Bento Grid) */}
         <section className="md:snap-start shrink-0 min-h-fit pb-12 flex flex-col justify-center">
