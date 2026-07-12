@@ -1,26 +1,111 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Colors */
+  --color-on-secondary: #ffffff;
+  --color-on-tertiary: #ffffff;
+  --color-on-primary: #ffffff;
+  --color-error: #ba1a1a;
+  --color-on-secondary-container: #795950;
+  --color-on-primary-fixed: #261a00;
+  --color-on-primary-container: #503a00;
+  --color-inverse-on-surface: #f4f0e7;
+  --color-secondary-fixed: #ffdbd0;
+  --color-primary-fixed-dim: #f6be39;
+  --color-tertiary: #536442;
+  --color-inverse-surface: #31312b;
+  --color-surface-container-lowest: #ffffff;
+  --color-secondary-fixed-dim: #e7bdb1;
+  --color-on-surface-variant: #4f4634;
+  --color-surface-bright: #fdf9f0;
+  --color-outline-variant: #d3c5ae;
+  --color-on-tertiary-fixed-variant: #3c4c2c;
+  --color-outline: #817662;
+  --color-on-background: #1c1c17;
+  --color-tertiary-fixed-dim: #bacda4;
+  --color-secondary-container: #fed3c7;
+  --color-tertiary-container: #9cae87;
+  --color-surface: #fdf9f0;
+  --color-on-secondary-fixed: #2c160e;
+  --color-on-error: #ffffff;
+  --color-on-secondary-fixed-variant: #5d4037;
+  --color-on-error-container: #93000a;
+  --color-error-container: #ffdad6;
+  --color-surface-dim: #dddad1;
+  --color-secondary: #77574d;
+  --color-surface-container: #f1eee5;
+  --color-primary-container: #d4a017;
+  --color-tertiary-fixed: #d6e9be;
+  --color-on-tertiary-fixed: #111f05;
+  --color-surface-container-low: #f7f3ea;
+  --color-surface-container-high: #ece8df;
+  --color-primary-fixed: #ffdfa0;
+  --color-on-primary-fixed-variant: #5c4300;
+  --color-background: #fdf9f0;
+  --color-surface-variant: #e6e2d9;
+  --color-on-surface: #1c1c17;
+  --color-inverse-primary: #f6be39;
+  --color-surface-tint: #795900;
+  --color-surface-container-highest: #e6e2d9;
+  --color-on-tertiary-container: #324223;
+  --color-primary: #795900;
+
+  /* Border Radius */
+  --radius-DEFAULT: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-full: 9999px;
+
+  /* Spacing */
+  --spacing-stack-lg: 48px;
+  --spacing-gutter: 24px;
+  --spacing-container-max: 1280px;
+  --spacing-margin-mobile: 16px;
+  --spacing-base: 8px;
+  --spacing-margin-desktop: 64px;
+  --spacing-stack-md: 24px;
+  --spacing-stack-sm: 12px;
+
+  /* Typography Fonts */
+  --font-headline-lg: "Libre Caslon Text", serif;
+  --font-body-lg: "Work Sans", sans-serif;
+  --font-label-sm: "Work Sans", sans-serif;
+  --font-title-md: "Libre Caslon Text", serif;
+  --font-body-md: "Work Sans", sans-serif;
+  --font-headline-lg-mobile: "Libre Caslon Text", serif;
+  --font-display-lg: "Libre Caslon Text", serif;
+
+  /* Typography font size */
+  --text-headline-lg: 32px;
+  --text-headline-lg--line-height: 40px;
+  --text-body-lg: 18px;
+  --text-body-lg--line-height: 28px;
+  --text-label-sm: 12px;
+  --text-label-sm--line-height: 16px;
+  --text-label-sm--letter-spacing: 0.05em;
+  --text-title-md: 20px;
+  --text-title-md--line-height: 28px;
+  --text-body-md: 16px;
+  --text-body-md--line-height: 24px;
+  --text-headline-lg-mobile: 28px;
+  --text-headline-lg-mobile--line-height: 36px;
+  --text-display-lg: 48px;
+  --text-display-lg--line-height: 56px;
+  --text-display-lg--letter-spacing: -0.02em;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+
+/* Base Styles */
+html {
+  font-size: 16px;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-on-background);
+}
+
+.ambient-shadow {
+  box-shadow: 0 8px 32px rgba(119, 87, 77, 0.08);
 }
