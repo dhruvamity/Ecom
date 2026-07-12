@@ -52,138 +52,34 @@ export default function Home() {
     <div className="w-full h-[calc(100vh-64px)] overflow-y-auto scroll-smooth md:snap-y md:snap-mandatory scroll-pt-16 pb-28 md:pb-8">
       <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col">
         
-        {/* Hero Section */}
-        <section className="snap-start shrink-0 min-h-fit py-12 md:min-h-[calc(100vh-64px)] flex flex-col justify-center gap-stack-md">
-          {/* Carousel Banner (Top) */}
-          <div className="w-full bg-primary/10 border border-primary/20 text-primary p-4 rounded-xl text-center hidden md:block font-title-md">
-            Carousel Banner
-          </div>
-
-          <div className="w-full flex flex-col md:grid md:grid-cols-12 gap-stack-md items-center">
-            {/* Left Column: Text & Product Card */}
-            <div className="w-full md:col-span-3 flex flex-col justify-center gap-stack-md order-2 md:order-1">
-              <div className="text-on-surface">
-                <h2 className="font-display-lg text-display-lg mb-stack-sm text-primary drop-shadow-sm">
+        {/* Hero Section (Carousel Banner) */}
+        <section className="snap-start shrink-0 min-h-fit pt-6 md:pt-12 flex flex-col justify-center">
+          <div className="relative w-full h-[60vh] md:h-[400px] md:aspect-[21/9] rounded-xl overflow-hidden shadow-xl">
+            <img
+              alt="Sacred Nourishment from Local Heritage"
+              className="absolute inset-0 w-full h-full object-cover"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfBBoa37PfaOaz54pltag1tb2_-zfSC3jC51d8LuNYfWam33Tx29zf4lnym-UIBOTRb0uZ69l_0GWS8aD0vN8vjgNhh5phXaqPLxz2uJGPnqal456sQTTq6NtZJOpMreFOKUtsGK0JzkG_HbMNRTrm_M4hkqcR4FSmghlDu0tVyhU3TB8zm1u3z4sbxdQ5tXrB_ZCK_ko7P1zcAgmizqaxvwaktxjAf9f5_YdmcMSW6JLaFAuYbHE2x8EGR2i5csrMbZM"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-surface-tint/90 via-surface-tint/40 to-transparent flex flex-col justify-end p-margin-mobile md:p-margin-desktop">
+              <div className="max-w-xl text-on-primary">
+                <h2 className="font-display-lg text-display-lg mb-stack-sm text-surface-bright drop-shadow-md">
                   Sacred Nourishment<br />from Local Heritage
                 </h2>
-                <p className="font-body-md text-body-md mb-stack-md text-on-surface-variant">
+                <p className="font-body-lg text-body-lg mb-stack-md text-surface-container-low drop-shadow">
                   Experience the purity of traditional Ayurvedic wellness in every golden drop.
                 </p>
                 <Link href="/product" className="inline-block bg-primary text-on-primary px-gutter py-base rounded-full font-label-sm text-label-sm uppercase hover:bg-primary-container hover:text-on-primary-container transition-all shadow-md active:scale-95">
                   Explore Collection
                 </Link>
               </div>
-
-              {/* Product Card placeholder for left side */}
-              <div className="hidden md:flex flex-col bg-surface-container-lowest rounded-xl shadow-md overflow-hidden border border-surface-variant mt-4">
-                <div className="h-32 bg-surface-variant overflow-hidden">
-                   <img src={bestSellers[0].image} className="w-full h-full object-cover" alt={bestSellers[0].name} />
-                </div>
-                <div className="p-4">
-                  <span className="font-title-sm text-on-surface block truncate">{bestSellers[0].name}</span>
-                  <span className="font-title-sm text-primary block mt-1">{bestSellers[0].priceFormatted}</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Center Column: Main Image */}
-            <div className="w-full md:col-span-6 relative h-[60vh] md:h-[70vh] rounded-xl overflow-hidden shadow-xl order-1 md:order-2">
-              <img
-                alt="Sacred Nourishment from Local Heritage"
-                className="w-full h-full object-cover"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfBBoa37PfaOaz54pltag1tb2_-zfSC3jC51d8LuNYfWam33Tx29zf4lnym-UIBOTRb0uZ69l_0GWS8aD0vN8vjgNhh5phXaqPLxz2uJGPnqal456sQTTq6NtZJOpMreFOKUtsGK0JzkG_HbMNRTrm_M4hkqcR4FSmghlDu0tVyhU3TB8zm1u3z4sbxdQ5tXrB_ZCK_ko7P1zcAgmizqaxvwaktxjAf9f5_YdmcMSW6JLaFAuYbHE2x8EGR2i5csrMbZM"
-              />
-              {/* Mobile text overlay (hidden on desktop since it's extracted to the left column) */}
-              <div className="md:hidden absolute inset-0 bg-gradient-to-t from-surface-tint/80 to-transparent flex flex-col justify-end p-margin-mobile">
-                <div className="max-w-xl text-on-primary">
-                  <h2 className="font-display-lg text-display-lg mb-stack-sm text-surface-bright drop-shadow-md">
-                    Sacred Nourishment<br />from Local Heritage
-                  </h2>
-                  <Link href="/product" className="inline-block bg-primary text-on-primary px-gutter py-base rounded-full font-label-sm text-label-sm uppercase hover:bg-primary-container shadow-md">
-                    Explore Collection
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Column: Additional Product Cards */}
-            <div className="w-full md:col-span-3 hidden md:flex flex-col gap-stack-md order-3">
-              <div className="flex flex-col bg-surface-container-lowest rounded-xl shadow-md overflow-hidden border border-surface-variant">
-                <div className="h-32 bg-surface-variant overflow-hidden">
-                   <img src={bestSellers[1].image} className="w-full h-full object-cover" alt={bestSellers[1].name} />
-                </div>
-                <div className="p-4">
-                  <span className="font-title-sm text-on-surface block truncate">{bestSellers[1].name}</span>
-                  <span className="font-title-sm text-primary block mt-1">{bestSellers[1].priceFormatted}</span>
-                </div>
-              </div>
-              <div className="flex flex-col bg-surface-container-lowest rounded-xl shadow-md overflow-hidden border border-surface-variant">
-                <div className="h-32 bg-surface-variant overflow-hidden">
-                   <img src={bestSellers[2].image} className="w-full h-full object-cover" alt={bestSellers[2].name} />
-                </div>
-                <div className="p-4">
-                  <span className="font-title-sm text-on-surface block truncate">{bestSellers[2].name}</span>
-                  <span className="font-title-sm text-primary block mt-1">{bestSellers[2].priceFormatted}</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Search Bar (Bottom) */}
-          <div className="w-full max-w-4xl mx-auto mt-4 hidden md:block">
-            <div className="relative flex items-center bg-surface-container-lowest rounded-full shadow-md overflow-hidden border border-outline-variant focus-within:border-primary transition-colors">
-              <Search className="text-on-surface-variant absolute left-6" size={24} />
-              <input
-                className="w-full bg-transparent border-none py-4 pl-16 pr-gutter font-body-lg text-on-surface focus:ring-0 placeholder:text-on-surface-variant/60 outline-none"
-                placeholder="Search for pure ghee..."
-                type="text"
-              />
             </div>
           </div>
         </section>
 
-        {/* Shop by Quantity (Bento Grid) & Search */}
-        <section className="snap-start shrink-0 min-h-fit py-12 md:min-h-[calc(100vh-64px)] flex flex-col justify-center gap-stack-lg">
-          {/* Search Bar - Hidden on Desktop since it is in Hero */}
-          <div className="w-full max-w-2xl mx-auto md:hidden">
-            <div className="relative flex items-center bg-surface-container-highest rounded-full shadow-sm overflow-hidden border border-outline-variant focus-within:border-primary transition-colors">
-              <Search className="text-on-surface-variant absolute left-4" size={24} />
-              <input
-                className="w-full bg-transparent border-none py-base pl-12 pr-gutter font-body-md text-on-surface focus:ring-0 placeholder:text-on-surface-variant/60 outline-none"
-                placeholder="Search for pure ghee..."
-                type="text"
-              />
-            </div>
-          </div>
-
-          <div className="w-full">
-            <h3 className="font-title-md text-title-md text-on-surface mb-stack-md text-center md:text-left">Shop by Quantity</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-base md:gap-gutter">
-              {[
-                { size: "500ml", icon: Beaker, href: "/product" },
-                { size: "1 Liter", icon: Droplets, href: "/product" },
-                { size: "2 Liters", icon: Coffee, href: "/product" },
-                { size: "5 Liters", icon: Package, href: "/product" },
-              ].map((item, idx) => (
-                <Link
-                  key={idx}
-                  className="group relative aspect-square rounded-xl overflow-hidden bg-surface-container-low shadow-sm hover:shadow-md transition-all flex flex-col items-center justify-center p-base border border-surface-variant"
-                  href={item.href}
-                >
-                  <div className="w-16 h-16 rounded-full bg-primary-container/20 flex items-center justify-center mb-base group-hover:scale-105 transition-transform">
-                    <item.icon className="text-primary" size={32} />
-                  </div>
-                  <span className="font-label-sm text-label-sm text-on-surface">{item.size}</span>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Best Sellers */}
-        <section className="snap-start shrink-0 min-h-fit py-12 md:min-h-[calc(100vh-64px)] flex flex-col justify-center">
+        {/* Product Listings (Best Sellers) */}
+        <section className="snap-start shrink-0 min-h-fit py-12 flex flex-col justify-center">
           <h3 className="font-title-md text-title-md text-on-surface mb-stack-md text-center md:text-left">Our Best Sellers</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {bestSellers.map((product) => (
               <div key={product.id} className="flex flex-col bg-surface-container-lowest rounded-xl shadow-[0_4px_24px_rgba(119,87,77,0.15)] overflow-hidden hover:shadow-lg transition-shadow">
                 <Link href="/product" className="relative aspect-[4/3] bg-surface-variant overflow-hidden group block cursor-pointer">
@@ -211,6 +107,46 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* Search Bar */}
+        <section className="snap-start shrink-0 pb-12 flex flex-col justify-center">
+          <div className="w-full max-w-2xl mx-auto">
+            <div className="relative flex items-center bg-surface-container-lowest rounded-full shadow-md overflow-hidden border border-outline-variant focus-within:border-primary transition-colors">
+              <Search className="text-on-surface-variant absolute left-6" size={24} />
+              <input
+                className="w-full bg-transparent border-none py-4 pl-16 pr-gutter font-body-lg text-on-surface focus:ring-0 placeholder:text-on-surface-variant/60 outline-none"
+                placeholder="Search for pure ghee..."
+                type="text"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* Shop by Quantity (Bento Grid) */}
+        <section className="snap-start shrink-0 min-h-fit pb-12 flex flex-col justify-center">
+          <div className="w-full">
+            <h3 className="font-title-md text-title-md text-on-surface mb-stack-md text-center md:text-left">Shop by Quantity</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-base md:gap-gutter">
+              {[
+                { size: "500ml", icon: Beaker, href: "/product" },
+                { size: "1 Liter", icon: Droplets, href: "/product" },
+                { size: "2 Liters", icon: Coffee, href: "/product" },
+                { size: "5 Liters", icon: Package, href: "/product" },
+              ].map((item, idx) => (
+                <Link
+                  key={idx}
+                  className="group relative aspect-square rounded-xl overflow-hidden bg-surface-container-low shadow-sm hover:shadow-md transition-all flex flex-col items-center justify-center p-base border border-surface-variant"
+                  href={item.href}
+                >
+                  <div className="w-16 h-16 rounded-full bg-primary-container/20 flex items-center justify-center mb-base group-hover:scale-105 transition-transform">
+                    <item.icon className="text-primary" size={32} />
+                  </div>
+                  <span className="font-label-sm text-label-sm text-on-surface">{item.size}</span>
+                </Link>
+              ))}
+            </div>
           </div>
         </section>
 
