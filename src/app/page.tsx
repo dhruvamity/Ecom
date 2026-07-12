@@ -49,11 +49,11 @@ export default function Home() {
   };
 
   return (
-    <div className="w-full h-[calc(100vh-64px)] overflow-y-auto snap-y snap-mandatory scroll-smooth">
+    <div className="w-full h-[calc(100vh-64px)] overflow-y-auto scroll-smooth md:snap-y md:snap-mandatory scroll-pt-16 pb-28 md:pb-8">
       <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col">
         
         {/* Hero Section */}
-        <section className="snap-start shrink-0 min-h-[calc(100vh-64px)] flex items-center justify-center py-stack-md">
+        <section className="snap-start shrink-0 min-h-fit py-12 md:min-h-[calc(100vh-64px)] flex items-center justify-center">
           <div className="relative w-full h-[80vh] rounded-xl overflow-hidden shadow-xl">
             <img
               alt="Sacred Nourishment from Local Heritage"
@@ -77,7 +77,7 @@ export default function Home() {
         </section>
 
         {/* Shop by Quantity (Bento Grid) & Search */}
-        <section className="snap-start shrink-0 min-h-[calc(100vh-64px)] flex flex-col justify-center gap-stack-lg py-stack-md">
+        <section className="snap-start shrink-0 min-h-fit py-12 md:min-h-[calc(100vh-64px)] flex flex-col justify-center gap-stack-lg">
           {/* Search Bar */}
           <div className="w-full max-w-2xl mx-auto">
             <div className="relative flex items-center bg-surface-container-highest rounded-full shadow-sm overflow-hidden border border-outline-variant focus-within:border-primary transition-colors">
@@ -115,7 +115,7 @@ export default function Home() {
         </section>
 
         {/* Best Sellers */}
-        <section className="snap-start shrink-0 min-h-[calc(100vh-64px)] flex flex-col justify-center py-stack-md">
+        <section className="snap-start shrink-0 min-h-fit py-12 md:min-h-[calc(100vh-64px)] flex flex-col justify-center">
           <h3 className="font-title-md text-title-md text-on-surface mb-stack-md text-center md:text-left">Our Best Sellers</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
             {bestSellers.map((product) => (
@@ -149,7 +149,7 @@ export default function Home() {
         </section>
 
         {/* Why Dhenuh? */}
-        <section className="snap-start shrink-0 min-h-[calc(100vh-64px)] flex flex-col justify-center py-stack-md">
+        <section className="snap-start shrink-0 min-h-fit py-12 md:min-h-[calc(100vh-64px)] flex flex-col justify-center">
           <div className="w-full bg-surface-container-low rounded-xl p-margin-mobile md:p-margin-desktop border border-surface-variant shadow-sm">
             <h3 className="font-title-md text-title-md text-on-surface mb-stack-md text-center">Why Choose Dhenuh?</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter text-center">
